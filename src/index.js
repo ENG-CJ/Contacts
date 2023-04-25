@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./main.css"
 
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+import { BrowserRouter,HashRouter, Route, Router, Routes } from 'react-router-dom';
 import ContactList from './pages/Home/ContactList';
 import AddContact from './pages/Contacts/AddContact';
 import EditContact from './pages/Contacts/EditContact';
@@ -16,7 +16,7 @@ root.render(
  
  <>
  
-  <BrowserRouter basename={window.location.pathname || ""}>
+  <HashRouter >
 <ContactContextProvider>
 <Routes>
    <Route exact path='/' element={<Login/>}/>
@@ -26,7 +26,7 @@ root.render(
     </Routes>
 </ContactContextProvider>
     {/* <Footer/> */}
-  </BrowserRouter>
+  </HashRouter>
 
  </>
  

@@ -19,7 +19,8 @@ export default  function ContactContextProvider (props){
     
         
         var result = await axios.post(
-          "http://localhost/users_active/api/users.api.php",
+          // "http://localhost/users_active/api/users.api.php",
+          "https://mygallery2023.000webhostapp.com/users_active/api/users.api.php",
           data
         );
         alert(result.data.message);
@@ -36,7 +37,8 @@ export default  function ContactContextProvider (props){
         };
       
         var result = await axios.post(
-          "http://localhost/users_active/api/users.api.php",
+          // "http://localhost/users_active/api/users.api.php",
+          "https://mygallery2023.000webhostapp.com/users_active/api/users.api.php",
           data
         );
         
@@ -51,7 +53,8 @@ export default  function ContactContextProvider (props){
         };
     
         var result = await axios.post(
-          "http://localhost/users_active/api/users.api.php",
+          // "http://localhost/users_active/api/users.api.php",
+          "https://mygallery2023.000webhostapp.com/users_active/api/users.api.php",
           data
         );
         console.log(result.data);
@@ -65,7 +68,10 @@ export default  function ContactContextProvider (props){
             data: values
         }
       
-        var result= await axios.post("http://localhost/users_active/api/users.api.php",data)
+        var result= await axios.post(
+          // "http://localhost/users_active/api/users.api.php",
+          "https://mygallery2023.000webhostapp.com/users_active/api/users.api.php",
+          data)
         alert(result.data.message);
         loadUsers();
         setClose(false);
@@ -79,7 +85,8 @@ export default  function ContactContextProvider (props){
         };
     
         var result = await axios.post(
-          "http://localhost/users_active/api/users.api.php",
+          // "http://localhost/users_active/api/users.api.php",
+          "https://mygallery2023.000webhostapp.com/users_active/api/users.api.php",
           data
         );
     

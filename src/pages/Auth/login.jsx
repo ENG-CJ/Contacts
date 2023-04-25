@@ -22,7 +22,10 @@ const Login = () => {
         data: authData
        };
 
-       var serverResult=await axios.post("http://localhost/users_active/api/auth.api.php",data);
+       var serverResult=await axios.post(
+        // "http://localhost/users_active/api/auth.api.php",
+        "https://mygallery2023.000webhostapp.com/users_active/api/auth.api.php",
+       data);
     //    console.log(serverResult)
       return serverResult;
 
