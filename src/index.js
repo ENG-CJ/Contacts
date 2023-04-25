@@ -16,10 +16,10 @@ root.render(
  
  <>
  
-  <BrowserRouter>
+  <BrowserRouter basename={window.location.pathname || ""}>
 <ContactContextProvider>
 <Routes>
-   <Route path='/' element={<Login/>}/>
+   <Route exact path='/' element={<Login/>}/>
    <Route path='/Contacts' element={<ContactList/>}/>
    <Route path='/Contacts/create' element={<AddContact/>}/>
    <Route path='/Contacts/Edit/:id' element={<EditContact/>}/>
