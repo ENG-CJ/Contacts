@@ -25,3 +25,10 @@ form{
     background-color: rgb(46, 101, 46);
     color: white;
 }
+
+@media (max-width: 802px){
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -4,11 +4,13 @@ import $ from "jquery";
 import axios from "axios";
 import { Container, Paper } from "@mui/material";
 import styles from "./contacts.module.css";
+import Error from "../../components/Error";
+import Loading from "../../components/Loading";
 const EditContact = () => {
   const { id } = useParams();
   const [responseData, setResponseData] = useState([]);
 const navigate=useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const updateContactData = async () => {
     var data = {
@@ -17,6 +19,7 @@ const navigate=useNavigate();
       targetID: id,
     };
 
+    
     var result = await axios.post(
       "http://localhost/users_active/api/users.api.php",
       data
@@ -36,18 +39,19 @@ const navigate=useNavigate();
     updateContactData();
     
   };
-  const findContactInfo = async () => {
+  const findContactInfo = async () => { 
     var data = {
       action: "findContact",
       id: id,
     };
-
+  
     var result = await axios.post(
       "http://localhost/users_active/api/users.api.php",
       data
     );
     
     setResponseData(result.data.response);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -59,6 +63,9 @@ const navigate=useNavigate();
     <>
       <Container sx={{ mt: 4 }}>
         <Paper sx={{ p: 3 }}>
+        {
+          loading? <Loading/>:
+          responseData? 
           <form onSubmit={handleEdit}>
             <div className={styles.main}>
               <h3>Create Contact User </h3>
@@ -98,6 +105,9 @@ const navigate=useNavigate();
               />
             </div>
           </form>
+          :<Error id={id}/>
+        }
+          
         </Paper>
       </Container>
 
